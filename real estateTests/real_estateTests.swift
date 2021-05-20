@@ -6,27 +6,17 @@
 //
 
 import XCTest
-
+@testable import real_estate
 class real_estateTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testPropertyViewModel() {
+        let propertyData = PropertyData(id: "1", currency: "AUD", displayPrice: "320", location: LocationData(address: "1 TEST 2 THIS NSW", state: "NSW", suburb: "THIS"), bedroomCount: 1, bathroomCount: 2, carspacesCount: 3, agent: Agent(firstName: "James", lastName: "Abanto", companyName: "TESTING", avatar: Avatar(small: ImageSize(url: ""), medium: ImageSize(url: ""), large: ImageSize(url: ""))), owner: Owner(firstName: "Renee", lastName: "Shen", avatar: Avatar(small: ImageSize(url: ""), medium: ImageSize(url: ""), large: ImageSize(url: ""))), propertyImage: [PropertyImage(id: 1, attachment:Attachment(url: "git"))])
+        
+        let propertyViewModel = PropertyViewModel(property: propertyData)
+        
+        XCTAssertEqual("Property id: \(propertyData.id)", propertyViewModel.id)
+        XCTAssertEqual("\(propertyData.agent.firstName) \(propertyData.agent.lastName)", propertyViewModel.agentName)
+        
     }
 
 }

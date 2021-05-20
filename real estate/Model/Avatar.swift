@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct Avatar: Codable {
+    let small: ImageSize
+    let medium: ImageSize
+    let large: ImageSize
+}
+
+struct ImageSize: Codable {
+    let url: String
+}
+

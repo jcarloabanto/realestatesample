@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+
+struct Owner: Codable {
+    let firstName, lastName: String
+    let avatar: Avatar
+    
+    enum CodingKeys: String, CodingKey {
+        case avatar
+        case firstName = "first_name"
+        case lastName = "last_name"
+    }
+
+}

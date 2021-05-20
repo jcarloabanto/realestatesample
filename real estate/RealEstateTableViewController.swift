@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RealEstateTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,5 +15,8 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension RealEstateTableViewController {
 }
 
